@@ -3,18 +3,27 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+
+let candidateName = input.question("What is your name?");
+console.log("Hello" + candidateName + "!");
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
+let question = input.question("Who was the first American woman in space? ");
+console.log(question);
+
+let correctAnswer = "Sally Ride";
+let candidateAnswer = "";
+if (correctAnswer === candidateAnswer){
+  console.log("Correct");
+  }
+  else {
+    console.log("False");
+  }
 
 
 //TODO: Variables for Part 2
 let questions;
 let correctAnswers;
 let candidateAnswers;
-
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //

@@ -104,11 +104,15 @@ function gradeQuiz(candidateAnswers) {
   grade = numOfCorrect/questions.length *100;
   
   if (grade >= 80) {
+    // console.log( `Congratulations! You have passed the quiz with ${grade}%`);
+
     console.log( `Overall Grade: ${grade}% (${numOfCorrect} of ${questions.length} responses correct) >>> Status: PASSED <<<`);
   } else {
+    // console.log(`Sorry, you have failed the quiz. Better luck next time.`);
     console.log(`Overall Grade: ${grade}% (${numOfCorrect} of ${questions.length} responses correct) >>> Status: FAILED <<<`);
   }
-  // console.log(grade);
+
+  console.log(grade);
 
   return grade;
 }

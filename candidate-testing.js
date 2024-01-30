@@ -73,6 +73,28 @@ function gradeQuiz(candidateAnswers) {
 
   let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
   let numOfCorrect = 0;
+
+  console.log(`Candidate Name: ${candidateName}
+    1) Who was the first American woman in space?
+    Your Answer: ${candidateAnswers[0]}
+    Correct Answer: Sally Ride
+    
+    2) True or false: 5000 meters = 5 kilometers.
+    Your Answer: ${candidateAnswers[1]}
+    Correct Answer: true
+    
+    3) (5 + 3)/2 * 10 = ?
+    Your Answer: ${candidateAnswers[2]}
+    Correct Answer: 40
+    
+    4) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
+    Your Answer: ${candidateAnswers[3]}
+    Correct Answer: Trajectory
+    
+    5) What is the minimum crew size for the ISS?
+    Your Answer: ${candidateAnswers[4]}
+    Correct Answer: 3`)
+
   for( i=0; i<correctAnswers.length; i++){
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
       // grade += 20;
@@ -82,14 +104,15 @@ function gradeQuiz(candidateAnswers) {
   grade = numOfCorrect/questions.length *100;
   
   if (grade >= 80) {
-    console.log( `Congratulations! You have passed the quiz with ${grade}%`);
+    console.log( `Overall Grade: ${grade}% (${numOfCorrect} of ${questions.length} responses correct) >>> Status: PASSED <<<`);
   } else {
-    console.log(`Sorry, you have failed the quiz. Better luck next time.`);
+    console.log(`Overall Grade: ${grade}% (${numOfCorrect} of ${questions.length} responses correct) >>> Status: FAILED <<<`);
   }
-  console.log(grade);
+  // console.log(grade);
 
   return grade;
 }
+// console.log(`Overall Grade: ${grade}% (${numOfCorrect} of ${questions.length} responses correct) >>> Status: FAILED <<<`)
 
 function runProgram() {
   askForName();
